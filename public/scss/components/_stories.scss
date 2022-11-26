@@ -1,0 +1,43 @@
+@use '../utility/' as *;
+
+.stories {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include respond(m) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+    }
+
+    @include respond(l) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.story {
+    position: relative;
+    transition: transform 250ms ease-in-out;
+
+    &:hover {
+        transform: translateY(-2.4rem);
+    }
+
+
+    &__picture {
+        width: 100%;
+
+        & > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__body {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding-inline: 3.2em;
+        padding-block: 4em;
+    }
+}

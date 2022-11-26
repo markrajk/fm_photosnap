@@ -1,0 +1,64 @@
+@use '../abstracts/' as *;
+
+.switch {
+    cursor: pointer;
+
+    & .slider {
+        position: relative;
+        display: inline-block;
+        width: 6.4em;
+        height: 3.2em;
+        border-radius: 1.6em;
+        background-color: hsl(var(--clr-grey-light));
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: .4em;
+            width: 2.4em;
+            aspect-ratio: 1;
+            background-color: hsl(var(--clr-black));
+            border-radius: 50%;
+            transform: translateY(-50%);
+            transition: transform 250ms ease-in-out;
+        }
+    }
+
+}
+
+.monthly,
+.yearly {
+    transition: opacity 250ms ease-in-out;
+}
+
+.switch--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2em;
+
+    &:has(input:checked) {
+        & .slider::before {
+            transform: translateY(-50%) translateX(3.2em);
+        }
+
+        & .yearly {
+            opacity: 1;
+        }
+
+        & .monthly {
+            opacity: .6;
+        }
+    }
+
+    &:not(:has(input:checked)) {
+        & .yearly {
+            opacity: .6;
+        }
+
+        & .monthly {
+            opacity: 1;
+        }
+    }
+}

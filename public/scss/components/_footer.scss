@@ -1,0 +1,153 @@
+@use '../utility/' as *;
+@use '../abstracts/' as *;
+
+.footer {
+    padding-block: 5.6em;
+    text-align: center;
+
+    @include respond(m) {
+        padding-block: 6.4em;
+    }
+
+    & .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        justify-items: center;
+        gap: 12em 0;
+
+        @include respond(m) {
+            grid-template-rows: 1fr;
+            grid-template-columns: repeat(2, auto);
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            'logo'
+            'social'
+            'navigation'
+        ;
+        justify-items: center;
+
+
+        @include respond(m) {
+            justify-items: start;
+            grid-template-areas: 
+            'logo'
+            'navigation'
+            'social'
+            ;
+            justify-self: start;
+        }
+
+
+        @include respond(l) {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            'logo navigation'
+            'social navigation'
+            ;
+            gap: 0 11rem;
+        }
+
+        &__logo {
+            grid-area: logo;
+        }
+
+        &__social {
+            grid-area: social;
+            margin-block: 3.2em 4.9em;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 1.3em;
+
+            & > li > a > svg path {
+                fill: hsl(var(--clr-white));
+            }
+            @include respond(m) {
+                margin-block: 0;
+            }
+
+            @include respond(l) {
+                align-self: end;
+            }
+        }
+
+        &__navigation {
+            grid-area: navigation;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.9em;
+
+            @include respond(m) {
+                padding-block: 3.2em 7.2em;
+                flex-direction: row;
+                gap: 2.6rem;
+            }
+
+            @include respond(l) {
+                padding-block: 0;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 1.9rem;
+            }
+
+            & li>a {
+                text-decoration: none;
+
+            }
+
+        }
+    }
+
+    &__misc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3.4rem;
+
+
+        @include respond(m) {
+            align-items: flex-end;
+            justify-content: space-between;
+            justify-self: end;
+        }
+    }
+}
+
+
+#facebook-icon {
+    &:hover path {
+        fill: url(#b);
+    }
+}
+
+#youtube-icon {
+    &:hover path {
+        fill: url(#c);
+    }
+}
+
+#twitter-icon {
+    &:hover path {
+        fill: url(#d);
+    }
+}
+
+#pinterest-icon {
+    &:hover path {
+        fill: url(#e);
+    }
+}
+
+#instagram-icon {
+    &:hover path {
+        fill: url(#f);
+    }
+}

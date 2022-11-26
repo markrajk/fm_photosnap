@@ -1,0 +1,68 @@
+@use '../utility/' as *;
+@use '../abstracts/' as *;
+
+.banner {
+    position: relative;
+    background-image: url(../assets/shared/mobile/bg-beta.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    
+
+
+
+
+    @include respond(m) {
+
+        background-image: url(../assets/shared/tablet/bg-beta.jpg);
+    }
+
+    @include respond(l) {
+        background-image: url(../assets/shared/desktop/bg-beta.jpg);
+    }
+
+    & .container {
+        position: relative;
+        padding-block: 6.4em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2.4em;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 2.4rem;
+            width: 12.8rem;
+            height: .6rem;
+            background: var(--clr-accent);
+        }
+
+        @include respond(m) {
+            position: static;
+            padding-block: 6.8em;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &::before {
+                top: 0;
+                left: 0;
+                width: .6rem;
+                height: 100%;
+            }
+        }
+    }
+
+    & h2 {
+        position: relative;
+        max-width: 32rem;
+
+        @include respond(m) {
+            max-width: 40rem;
+        }
+    }
+}
