@@ -1,0 +1,114 @@
+@use '../abstracts/' as *;
+@use '../utility/' as *;
+
+.features-table {
+    // text-align: center;
+    padding-bottom: 6.4em;
+
+    @include respond(m) {
+        margin-bottom: 11.2rem;
+    }
+
+    @include respond(l) {
+        margin-bottom: 16rem;
+    }
+
+    & h2 {
+        display: none;
+        margin-bottom: 4rem;
+        text-align: center;
+
+        @include respond(m) {
+            display: block;
+        }
+
+        @include respond(l) {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 1;
+
+    & .row {
+        padding-block: 2.2em;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 1fr;
+        grid-template-areas: 
+            'cell-01 cell-01 cell-01'
+            'cell-02 cell-03 cell-04'
+        ;
+        border-bottom: 1px solid hsl(var(--clr-grey-light));
+        gap: 1.6em 0;
+
+        @include respond(m) {
+            grid-template-columns: 1fr repeat(3, 14em);
+            grid-template-rows: 1fr;
+            grid-template-areas:
+                'cell-01 cell-02 cell-03 cell-04';
+        }
+
+        &.table-header {
+            border-color: hsl(var(--clr-black));
+            & .cell-02,
+            & .cell-03,
+            & .cell-04 {
+                display: none;
+
+                @include respond(m) {
+                    display: inline-block;
+                }
+            }
+
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            'cell-01 cell-01 cell-01';
+
+            @include respond(m) {
+                grid-template-columns: 1fr repeat(3, 14em);
+                grid-template-rows: 1fr;
+                grid-template-areas:
+                    'cell-01 cell-02 cell-03 cell-04';
+            }
+        }
+
+        & .cell {
+
+            &.cell-02,
+            &.cell-03,
+            &.cell-04 {
+                & span {
+                    display: block;
+                    opacity: .5;
+                    margin-bottom: .8rem;
+
+                    @include respond(m) {
+                        display: none;
+                    }
+                }
+
+                @include respond(m) {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            &.cell-01 {
+                grid-area: cell-01;
+            }
+            &.cell-02 {
+                grid-area: cell-02;
+            }
+            &.cell-03 {
+                grid-area: cell-03;
+            }
+            &.cell-04 {
+                grid-area: cell-04;
+            }
+        }
+    }
+}

@@ -22,7 +22,7 @@
         color: hsl(var(--clr-white));
 
         &:hover {
-            background-color: hsl(var(--clr-grey-light));
+            background-color: #DFDFDF;
             color: hsl(var(--clr-black));
         }
 
@@ -31,7 +31,7 @@
             color: hsl(var(--clr-black));
 
             &:hover {
-                background-color: hsl(var(--clr-grey-light));
+                background-color: #DFDFDF;
                 color: hsl(var(--clr-black));
             }
         }
