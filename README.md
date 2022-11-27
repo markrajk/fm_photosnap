@@ -15,12 +15,12 @@ This is a solution to the [Photosnap Website challenge on Frontend Mentor](https
 
 ### Screenshot
 
-![](./screenshots/screenshot.jpg)
+![](./screenshots/screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/markrajk/fm_photosnap](https://github.com/markrajk/fm_photosnap)
+- Live Site URL: [Add live site URL here](https://markrajk.github.io/fm_photosnap/)
 
 ## My process
 
