@@ -38,7 +38,7 @@
 
     @include respond(m) {
         padding-inline: 4em;
-        max-width: 118em;
+        max-width: 119em;
     }
 }
 
@@ -72,7 +72,7 @@
 .letter-spacing-4 {
     letter-spacing: 3.3px;
     @include respond(l) {
-        letter-spacing: 4px;
+        letter-spacing: 4.3px;
     }
 }
 .letter-spacing-normal {letter-spacing: normal;}
