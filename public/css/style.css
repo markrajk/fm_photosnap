@@ -235,7 +235,7 @@ button {
 @media only screen and (min-width: 768px) {
   .container {
     padding-inline: 4em;
-    max-width: 118em;
+    max-width: 119em;
   }
 }
 
@@ -312,7 +312,7 @@ button {
 }
 @media only screen and (min-width: 1280px) {
   .letter-spacing-4, .text-h1 {
-    letter-spacing: 4px;
+    letter-spacing: 4.3px;
   }
 }
 
@@ -470,6 +470,7 @@ button {
   z-index: 9000;
 }
 .header nav ul {
+  align-self: center;
   width: 100%;
   border-bottom: 1px solid hsl(var(--clr-grey-light));
   padding-bottom: 2em;
@@ -506,9 +507,10 @@ button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 3.7em;
+    gap: 3.6em;
     padding: 0;
     margin: 0;
+    margin-left: 5em;
     border: 0;
     text-align: left;
   }

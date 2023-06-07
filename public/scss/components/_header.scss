@@ -58,7 +58,7 @@
         z-index: 9000;
 
         & ul {
-
+            align-self: center;
             width: 100%;
             border-bottom: 1px solid hsl(var(--clr-grey-light));
             padding-bottom: 2em;
@@ -101,9 +101,10 @@
                 align-items: center;
                 justify-content: flex-start;
                 // gap: clamp(0px, 2.5vw, 3.7em);
-                gap: 3.7em;
+                gap: 3.6em;
                 padding: 0;
                 margin: 0;
+                margin-left: 5em;
                 // padding-inline: .5em;
                 border: 0;
                 text-align: left;
